@@ -1,7 +1,6 @@
 module com.example.jfxzookeeperkafka {
     requires javafx.controls;
     requires javafx.fxml;
-    requires zookeeper.jute;
     requires zookeeper;
 
 
