@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.RadioButton?>
+
+<?import javafx.scene.control.Button?>
+<GridPane alignment="center" hgap="10" vgap="10"  style="-fx-background-color: #fffdd1" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.jfxzookeeperkafka.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label fx:id="appName"/>
+    <Label fx:id="welcomeText" GridPane.rowIndex="1" GridPane.columnIndex="4" />
+    <Button text="On!" onAction="#onHelloButtonClick" GridPane.rowIndex="2" GridPane.columnIndex="4"/>
+
+    <fx:define>
+        <ToggleGroup fx:id="ZookeeperStatus" />
+    </fx:define>
+
+    <RadioButton fx:id="start" text="Away for the day." GridPane.rowIndex="4" GridPane.columnIndex="4" onAction="#StartZookeeper" toggleGroup="$ZookeeperStatus"/>
+    <RadioButton fx:id="stop" text="On Lunch." GridPane.rowIndex="5" onAction="#StopZookeeper" GridPane.columnIndex="4" toggleGroup="$ZookeeperStatus"/>
+
+
+</GridPane>
