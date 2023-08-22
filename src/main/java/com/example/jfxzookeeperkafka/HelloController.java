@@ -2,10 +2,8 @@ package com.example.jfxzookeeperkafka;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import org.apache.zookeeper.ZooKeeper;
+
 
 import java.io.IOException;
 
@@ -34,7 +32,7 @@ public class HelloController {
     }
 
     @FXML
-    protected void StartZookeeper() throws IOException {
+    protected void StartZookeeper() {
        z.startSession();
     }
 
