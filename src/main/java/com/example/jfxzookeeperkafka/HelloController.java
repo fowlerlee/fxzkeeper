@@ -18,30 +18,28 @@ public class HelloController {
     private CheckBox StartZookeeper;
     @FXML
     private CheckBox StopZookeeper;
-    private FXWatcher z;
+    private LeaderElection z;
 
 
     @FXML
     protected void onHelloButtonClick() {
-        Process proc = null;
         try {
-            String[] cmdss= {"cd /home/lee/Documents/java/zookeeper3.8.2/bin"};
-            String[] cmdss1= {"./zkServer.sh start"};
-            proc = Runtime.getRuntime().exec(cmdss, null);
-            proc = Runtime.getRuntime().exec(cmdss1, null);
-            welcomeText.setText("zookeeper ON!");
+            z = new LeaderElection();
         } catch (IOException e) {
-            System.out.println("Failed to connect to zookeeper!");
+            throw new RuntimeException(e);
         }
+        welcomeText.setText("zookeeper ON!");
+
+
     }
 
     @FXML
     protected void StartZookeeper() throws IOException {
-       z = new FXWatcher();
+       z.startSession();
     }
 
     @FXML
     protected void StopZookeeper() {
-
+        z.endSession();
     }
 }
